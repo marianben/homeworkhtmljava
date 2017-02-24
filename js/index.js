@@ -6,7 +6,7 @@ function square_equation() {
 
   var d = b * b - 4 * a * c;
   if ( d < 0 ) {
-    string = "пара комплексних чисел<br>x<sub>1</sub> = (";
+    string = "пара комплексно-сопряженных корней<br>x<sub>1</sub> = (";
     string += - b / ( 2 * a );
     string += ", ";
     string += Math.sqrt( -d ) / ( 2 * a );
@@ -15,17 +15,18 @@ function square_equation() {
     string += ", ";
     string += - Math.sqrt( -d ) / ( 2 * a );
     string += ").";
-  } else if ( d == 0 ) {
-        string = "два одинаковихкорені:<br>x<sub>1</sub> = x<sub>2</sub> = ";
+  } else {
+ if ( d == 0 ) {
+        string = "два одинаковых вещественных корня:<br>x<sub>1</sub> = x<sub>2</sub> = ";
         string += -b / ( 2 * a );
         string += ".";
       } else {
-        string = "дварізних корені:<br>x<sub>1</sub> = ";
+        string = "два различных вещественных корня:<br>x<sub>1</sub> = ";
         string += -b / ( 2 * a ) - Math.sqrt( d ) / ( 2 * a );
         string += " x<sub>2</sub> = ";
         string += -b / ( 2 * a ) + Math.sqrt( d ) / ( 2 * a );
         string += ".";
       }
   }
-  document.write(string);
+  sol.innerHTML = string;
 }
